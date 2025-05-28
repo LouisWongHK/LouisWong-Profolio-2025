@@ -1,0 +1,799 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono&display=swap');
+
+:root {
+    /* Light Mode - White and Azure */
+    --bg-color: #FFFFFF; /* White background */
+    --panel-bg: #F0F8FF; /* AliceBlue - a very light azure */
+    --text-primary: #121212; /* Dark grey for text */
+    --text-secondary: #555555; /* Medium grey for secondary text */
+    --accent-primary: #007FFF; /* Azure */
+    --accent-primary-hover: #005DB3; /* Darker Azure for hover */
+    --accent-secondary: #87CEFA; /* LightSkyBlue - lighter azure */
+    --border-color: #D0EFFF; /* Light azure for borders */
+    --shadow-color: rgba(0, 127, 255, 0.1); /* Subtle azure shadow */
+    --button-text: #FFFFFF;
+    --code-bg: #E8F4FF;
+    --code-text: #005DB3;
+
+    /* Toggle Switch specific - Light Mode */
+    --switch-bg-light: rgb(0, 104, 222);
+    --circle-bg-light: rgb(255, 195, 0); /* Sun */
+    --light1-bg-light: rgb(48, 145, 255);
+    --light2-bg-light: rgb(29, 130, 245);
+    --light3-bg-light: rgb(16, 116, 230);
+    --cloud-front-bg-light: #fff;
+    --cloud-back-bg-light: rgba(255, 255, 255, 0.5);
+}
+
+body.dark-mode {
+    /* Dark Mode - Complementary to Azure */
+    --bg-color: #1A1A2E; /* Dark Navy/Indigo */
+    --panel-bg: #162447; /* Slightly lighter Navy */
+    --text-primary: #E0E0E0; /* Light grey for text */
+    --text-secondary: #A0A0A0; /* Medium-light grey */
+    --accent-primary: #279EFF; /* Brighter Azure for dark mode */
+    --accent-primary-hover: #40A2E3; /* Lighter Azure for hover */
+    --accent-secondary: #87CEFA; /* LightSkyBlue - can remain similar */
+    --border-color: #303F7A; /* Darker blue for borders */
+    --shadow-color: rgba(39, 159, 255, 0.15);
+    --button-text: #FFFFFF;
+    --code-bg: #223055;
+    --code-text: #87CEFA;
+
+    /* Toggle Switch specific - Dark Mode */
+    --switch-bg-dark: #000;
+    --circle-bg-dark: #ccc; /* Moon */
+    --light1-bg-dark: #555;
+    --light2-bg-dark: #333;
+    --light3-bg-dark: #222;
+    --star-color-dark: #fff;
+    --moon-crater-dark: rgb(168, 168, 168);
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.8;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 16px;
+}
+
+header {
+    background-color: var(--panel-bg);
+    padding: 1.5rem 2rem;
+    border-bottom: 2px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+header .header-content {
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    color: var(--accent-primary);
+    margin-right: 2rem;
+    font-weight: 700;
+}
+
+nav a {
+    color: var(--text-secondary);
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent-primary);
+    transition: width 0.3s ease;
+}
+
+nav a:hover,
+nav a.active { /* Add .active class with JS for current section */
+    color: var(--accent-primary);
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+
+.container {
+    max-width: 1100px;
+    margin: 2.5rem auto;
+    padding: 2rem;
+    background-color: var(--bg-color); /* Keep container background same as body or slightly off */
+}
+
+section {
+    padding: 3rem 0; /* Increased padding */
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.section-title {
+    font-size: 2.5rem; /* Larger section titles */
+    color: var(--accent-primary);
+    margin-bottom: 2rem; /* Increased margin */
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-secondary);
+}
+
+/* About Section */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.about-text {
+    flex: 2;
+}
+.about-text p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+.profile-pic-placeholder {
+    width: 200px;
+    height: 200px;
+    background-color: var(--accent-secondary);
+    color: var(--bg-color);
+    font-size: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0 auto;
+    font-weight: bold;
+    border: 5px solid var(--accent-primary);
+}
+
+
+/* Experience Section */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.experience-card {
+    background-color: var(--panel-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    border-left: 4px solid var(--accent-primary);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+.experience-card h3 {
+    color: var(--accent-primary);
+    margin-bottom: 0.5rem;
+}
+
+.experience-company {
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.experience-date {
+    font-style: italic;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.experience-card ul {
+    list-style-position: inside;
+    padding-left: 0;
+}
+.experience-card ul li {
+    margin-bottom: 0.5rem;
+}
+
+
+/* Resume Section */
+.resume-section {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-primary);
+    color: var(--button-text);
+    padding: 0.8rem 1.8rem;
+    border-radius: 25px; /* Pill shape */
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: var(--accent-primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--accent-primary);
+    border: 2px solid var(--accent-primary);
+    padding: 0.6rem 1.5rem;
+}
+.btn-secondary:hover {
+    background-color: var(--accent-primary);
+    color: var(--button-text);
+    border-color: var(--accent-primary);
+}
+
+
+/* Projects Section */
+.filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.filter-btn {
+    background-color: var(--panel-bg);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+.filter-btn.active, .filter-btn:hover {
+    background-color: var(--accent-primary);
+    color: var(--button-text);
+    border-color: var(--accent-primary);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background-color: var(--panel-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+.project-card strong {
+    color: var(--accent-primary);
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+.project-card p {
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+/* Skills Section */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.skill-category {
+    background-color: var(--panel-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+.skill-category h3 {
+    color: var(--accent-primary);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--accent-secondary);
+    padding-bottom: 0.5rem;
+}
+.skill-category p {
+    margin-bottom: 0.5rem;
+}
+
+.skills-bar {
+    background-color: var(--border-color);
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    height: 25px; /* Slightly taller bar */
+    position: relative;
+}
+.skills-bar p { /* Skill name inside the bar container */
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-primary);
+    font-weight: 600;
+    z-index: 2;
+    font-size: 0.9em;
+}
+
+.skills-bar-fill {
+    background-color: var(--accent-primary);
+    height: 100%;
+    width: 0; /* Animated by JS */
+    border-radius: 20px 0 0 20px; /* Rounded only on the advancing side */
+    text-align: right;
+    padding-right: 10px;
+    transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1); /* Smoother transition */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.skills-bar-fill::after { /* Percentage text */
+    content: attr(data-percent);
+    color: var(--button-text);
+    font-weight: bold;
+    font-size: 0.9em;
+    padding-right: 5px;
+}
+body.dark-mode .skills-bar p {
+    color: var(--text-primary); /* Ensure skill name is visible in dark mode */
+}
+
+/* Education Section */
+.education-item {
+    background-color: var(--panel-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    border-left: 4px solid var(--accent-secondary);
+}
+.education-item h3 {
+    color: var(--accent-primary);
+    margin-bottom: 0.3rem;
+}
+.education-institution {
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+/* Contact Section */
+.contact-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contact-details {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    line-height: 2;
+}
+.contact-details p {
+    margin-bottom: 0.5rem;
+}
+.contact-details a {
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+
+#contactForm {
+    max-width: 700px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+}
+
+.form-group {
+    margin-bottom: 0.5rem; /* Reduced margin as grid provides gap */
+}
+
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+#contactForm input[type="text"]:focus,
+#contactForm input[type="email"]:focus,
+#contactForm textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px var(--accent-secondary);
+}
+
+#contactForm textarea {
+    resize: vertical;
+}
+
+#contactForm button {
+    width: auto; /* Fit content */
+    justify-self: center; /* Center button in grid cell */
+}
+
+.socials {
+    text-align: center;
+    margin-top: 3rem;
+}
+.socials h3 {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+.socials a {
+    margin: 0 0.75rem;
+    color: var(--text-secondary);
+    font-size: 1.5rem; /* Icon size */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.socials a svg {
+    width: 28px; /* Control SVG size */
+    height: 28px;
+    fill: currentColor; /* Make SVG use parent's color */
+}
+.socials a:hover {
+    color: var(--accent-primary);
+    transform: scale(1.2);
+}
+
+
+/* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+    background-color: var(--accent-primary);
+    color: var(--button-text);
+    border: none;
+    padding: 0.6rem 0.9rem; /* Make it more square-ish */
+    border-radius: 50%; /* Circle shape */
+    cursor: pointer;
+    font-size: 1.2rem; /* Arrow size */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    z-index: 999;
+}
+#backToTop:hover {
+    background-color: var(--accent-primary-hover);
+    transform: translateY(-3px);
+}
+
+
+footer {
+    background-color: var(--panel-bg);
+    padding: 2rem;
+    text-align: center;
+    border-top: 2px solid var(--border-color);
+    margin-top: 3rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+
+/* Light/Dark Mode Toggle Styles */
+.mode-switcher-container {
+    /* Position as needed, e.g., in the header */
+}
+
+#sun_switch {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    position: absolute; /* So it doesn't take up space */
+}
+
+#sun_switch + label {
+    cursor: pointer;
+    display: inline-block;
+    transform: scale(0.3); /* Scaled down for header */
+    transform-origin: center;
+    margin: -40px; /* Adjust positioning due to scale */
+}
+
+
+.switch {
+    position: relative;
+    overflow: hidden;
+    width: 314px;
+    height: 120px;
+    border-radius: 100px;
+    box-shadow: 0 2px 4px 0px inset rgba(0, 0, 0, 0.25);
+    background: var(--switch-bg-light);
+    transition: background .5s ease-in-out;
+}
+
+.circle {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.25), inset 5px 5px 8px 0px rgba(255, 255, 255, 1);
+    background: var(--circle-bg-light); /* Sun */
+    transition: transform .25s ease-in-out, background .5s ease-in-out;
+}
+
+.light1 {
+    position: absolute;
+    left: -49px;
+    top: -48px;
+    width: 216px;
+    height: 216px;
+    background: var(--light1-bg-light);
+    border-radius: 50%;
+    transition: transform .5s ease-in-out, background .5s ease-in-out;
+}
+
+.light2 {
+    position: absolute;
+    left: -6px;
+    top: -50px;
+    width: 216px;
+    height: 216px;
+    background: var(--light2-bg-light);
+    border-radius: 50%;
+    transition: transform .5s ease-in-out, background .5s ease-in-out;
+}
+
+.light3 {
+    position: absolute;
+    left: 38px;
+    top: -44px;
+    width: 216px;
+    height: 216px;
+    background: var(--light3-bg-light);
+    border-radius: 50%;
+    transition: transform .5s ease-in-out, background .5s ease-in-out;
+}
+
+.clouds-front { background: var(--cloud-front-bg-light); }
+.clouds-back { background: var(--cloud-back-bg-light); transform: translate(-10px, -15px); }
+
+.cloud1 { position: absolute; left: 13px; top: 95px; width: 65px; height: 65px; border-radius: 50%; background: inherit; }
+.cloud2 { position: absolute; left: 71px; top: 95px; width: 51px; height: 51px; border-radius: 50%; background: inherit; }
+.cloud3 { position: absolute; left: 115px; top: 73px; width: 76px; height: 76px; border-radius: 50%; background: inherit; }
+.cloud4 { position: absolute; left: 174px; top: 90px; width: 76px; height: 76px; border-radius: 50%; background: inherit; }
+.cloud5 { position: absolute; left: 201px; top: 70px; width: 72px; height: 68px; border-radius: 50%; background: inherit; }
+.cloud6 { position: absolute; left: 252px; top: 36px; width: 136px; height: 136px; border-radius: 50%; background: inherit; }
+.cloud7 { position: absolute; left: 278px; top: 0px; width: 136px; height: 136px; border-radius: 50%; background: inherit; }
+
+.moon_circle1, .moon_circle2, .moon_circle3 {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--moon-crater-dark); /* Use CSS var for moon craters */
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.25);
+}
+.moon_circle1 { left: 55px; top: 56px; width: 16px; height: 16px; }
+.moon_circle2 { left: 15px; top: 39px; width: 25px; height: 25px; }
+.moon_circle3 { left: 51px; top: 21px; width: 12px; height: 12px; }
+
+#sun_switch:not(:checked) ~ label .moon_circle1,
+#sun_switch:not(:checked) ~ label .moon_circle2,
+#sun_switch:not(:checked) ~ label .moon_circle3 {
+    display: none;
+}
+
+.star {
+    position: relative; /* Changed from absolute for easier layout within .stars */
+    height: 20px;
+    width: 20px;
+    background: var(--star-color-dark); /* Use CSS var for star color */
+    clip-path: path('M 5 0 C 5 5 4 10 0 10 C 4 10 5 15 5 20 C 5 15 6 10 10 10 C 6 10 5 5 5 0');
+}
+
+.stars { /* Container for stars */
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0; /* Hidden by default, shown in dark mode */
+    transition: opacity 0.5s ease-in-out;
+}
+
+#sun_switch:not(:checked) ~ label .stars {
+    opacity: 0;
+}
+#sun_switch:not(:checked) ~ label .star {
+    display: none;
+}
+
+
+.star1 { position:absolute; top: 50px; left: 50px; } /* Reverted to absolute within .stars */
+.star2 { position:absolute; top: 20px; left: 30px; }
+.star3 { position:absolute; top: 20px; left: 120px; }
+.star4 { position:absolute; top: -15px; left: 150px; } /* May need adjustment after scaling */
+.star5 { position:absolute; top: -55px; left: 135px; } /* May need adjustment */
+
+/* Dark Mode Toggle Logic */
+#sun_switch:checked + label .circle {
+    background: var(--circle-bg-dark); /* Moon */
+    transform: translate(195px, 0);
+    box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.25), inset 5px 5px 8px 0px rgba(0,0,0, 0.3); /* Adjusted shadow for moon */
+}
+#sun_switch:checked + label .switch { background: var(--switch-bg-dark); }
+#sun_switch:checked + label .light1 { background: var(--light1-bg-dark); transform: translate(195px, 0); }
+#sun_switch:checked + label .light2 { background: var(--light2-bg-dark); transform: translate(115px, 0); }
+#sun_switch:checked + label .light3 { background: var(--light3-bg-dark); transform: translate(30px, 0); }
+
+#sun_switch:checked + label .clouds-front,
+#sun_switch:checked + label .clouds-back {
+    display: none; /* Hide clouds in night mode */
+}
+#sun_switch:checked + label .stars {
+    opacity: 1;
+}
+#sun_switch:checked + label .star {
+    display: block; /* Show stars */
+    background: var(--star-color-dark);
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    header .header-content {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    header h1 {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+        font-size: 1.8rem;
+    }
+    nav {
+        margin-top: 0.5rem;
+    }
+    nav a {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+    }
+    .mode-switcher-container {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+    #sun_switch + label {
+        transform: scale(0.25);
+        margin: -45px;
+    }
+
+    .container {
+        margin: 1.5rem auto;
+        padding: 1rem;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .about-content {
+        flex-direction: column-reverse; /* Image on top on mobile */
+    }
+    .profile-pic-placeholder {
+        width: 150px;
+        height: 150px;
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+    .skills-container, .projects-grid, .experience-grid {
+        grid-template-columns: 1fr; /* Stack on smaller screens */
+    }
+    #contactForm {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 15px;
+    }
+    header h1 {
+        font-size: 1.6rem;
+    }
+    nav a {
+        display: block;
+        margin: 0.5rem 0;
+        text-align: center;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    .project-card, .experience-card, .skill-category, .education-item {
+        padding: 1rem;
+    }
+    #backToTop {
+        padding: 0.5rem 0.7rem;
+        font-size: 1rem;
+        bottom: 15px;
+        right: 15px;
+    }
+     .mode-switcher-container {
+        top: 10px;
+        right: 10px;
+    }
+    #sun_switch + label {
+        transform: scale(0.22);
+        margin: -48px;
+    }
+}

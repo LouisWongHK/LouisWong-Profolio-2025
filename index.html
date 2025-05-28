@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Louis Wong - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Louis Wong</h1>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+        <div class="mode-switcher-container">
+            <input type="checkbox" id="sun_switch">
+            <label for="sun_switch">
+                <div class="switch">
+                    <div class="light3"></div>
+                    <div class="light2"></div>
+                    <div class="light1"></div>
+                    <div class="clouds-back">
+                        <div class="cloud7"></div>
+                        <div class="cloud6"></div>
+                        <div class="cloud5"></div>
+                        <div class="cloud4"></div>
+                        <div class="cloud3"></div>
+                        <div class="cloud2"></div>
+                        <div class="cloud1"></div>
+                    </div>
+                    <div class="clouds-front">
+                        <div class="cloud7"></div>
+                        <div class="cloud6"></div>
+                        <div class="cloud5"></div>
+                        <div class="cloud4"></div>
+                        <div class="cloud3"></div>
+                        <div class="cloud2"></div>
+                        <div class="cloud1"></div>
+                    </div>
+                    <div class="stars">
+                        <div class="star star1"></div>
+                        <div class="star star2"></div>
+                        <div class="star star3"></div>
+                        <div class="star star4"></div>
+                        <div class="star star5"></div>
+                    </div>
+                    <div class="circle">
+                        <div class="moon_circle1"></div>
+                        <div class="moon_circle2"></div>
+                        <div class="moon_circle3"></div>
+                    </div>
+                </div>
+            </label>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm Louis Wong (He/Him), a detail-oriented and adaptable professional based in Toronto, ON. I'm passionate about front-end development, UI/UX design, and creating engaging digital experiences. Currently, I'm expanding my skills in Web Development - Front-End Design at George Brown College (expected graduation 2026).</p>
+                    <p>My background includes experience in operations, marketing, and teaching, where I've honed my presentation, organizational, and communication skills. I'm proficient in English, Cantonese, and Mandarin. I thrive in collaborative team environments and am adept at managing multiple tasks with precision, even under pressure.</p>
+                    <p>I have a keen interest in learning new technologies and creative tools. I'm eager to contribute to innovative projects and bring my dynamic problem-solving abilities to a fast-paced studio environment.</p>
+                </div>
+                <div class="about-image">
+                    <div class="profile-pic-placeholder">LW</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="section-title">Past Work Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h3>Operations & Marketing Officer</h3>
+                    <p class="experience-company">Modern Bachelor, Hong Kong</p>
+                    <p class="experience-date">Sep 2024 - Feb 2024</p> <ul>
+                        <li>Managed client engagement and operational workflows, growing client base by 150%.</li>
+                        <li>Collaborated with team members to streamline processes and ensure high service standards.</li>
+                        <li>Delivered professional presentations to clients, enhancing communication clarity.</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <h3>Part-time teaching Tutor (History)</h3>
+                    <p class="experience-company">Tsuen Wan Public Ho Chuen Yiu Memorial College, Hong Kong</p>
+                    <p class="experience-date">Sep 2023 - Jul 2024</p>
+                    <ul>
+                        <li>Developed and presented interactive educational materials to diverse student groups.</li>
+                        <li>Ensured a safe and organized classroom environment through active monitoring.</li>
+                        <li>Adapted content delivery to meet varying needs, demonstrating flexibility.</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <h3>Founder, Gunslinger Conflict Research Platform</h3>
+                    <p class="experience-company">Hong Kong</p>
+                    <p class="experience-date">2022 - Present</p>
+                    <ul>
+                        <li>Led community initiatives, raising over HKD 10,000 for humanitarian causes.</li>
+                        <li>Delivered public talks to diverse audiences, utilizing clear and engaging communication.</li>
+                        <li>Created and disseminated informational content for community use.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <a href="path-to-your-resume.pdf" download="LouisWong_Resume.pdf" class="btn">Download Resume</a>
+            </section>
+
+        <section id="projects">
+            <h2 class="section-title">Projects</h2>
+            <div class="filter-tabs">
+                <button class="btn filter-btn active" data-filter="all">All</button>
+                <button class="btn filter-btn" data-filter="web">Websites</button>
+                <button class="btn filter-btn" data-filter="uiux">UI/UX</button>
+                </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="uiux">
+                    <strong>WWII Strategy Game UI</strong>
+                    <p>A military-themed strategy interface prototype. Focused on intuitive navigation and clear visual hierarchy for complex information.</p>
+                    <a href="#" class="btn-secondary">View Details (Soon)</a>
+                </div>
+                <div class="project-card" data-category="web">
+                    <strong>Mobile Battle Planner</strong>
+                    <p>Interactive troop movement layout concept for mobile. Explored responsive design and touch-friendly controls.</p>
+                    <a href="#" class="btn-secondary">View Details (Soon)</a>
+                </div>
+                <div class="project-card" data-category="web">
+                    <strong>Personal Portfolio Website</strong>
+                    <p>This very website! Designed with a clean, modern aesthetic and a focus on user experience. Features a light/dark mode toggle.</p>
+                    <a href="https://github.com/your-github-username/portfolio" class="btn-secondary" target="_blank">View on GitHub</a>
+                </div>
+                </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <div class="skills-bar"><p>HTML</p><div class="skills-bar-fill" data-percent="90%"></div></div>
+                    <div class="skills-bar"><p>CSS</p><div class="skills-bar-fill" data-percent="85%"></div></div>
+                    <div class="skills-bar"><p>JavaScript</p><div class="skills-bar-fill" data-percent="75%"></div></div>
+                    <p>Adobe Premiere (Entry-level, self-studied)</p>
+                    <p>Familiarity with Windows (PC) production environments</p>
+                    <p>List management (EDLs)</p>
+                    <p>Quality control processes</p>
+                    <p>Eager to learn: Avid, DaVinci Resolve</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Interpersonal & Operational</h3>
+                    <p>Strong presentation skills</p>
+                    <p>Team collaboration</p>
+                    <p>Conflict resolution</p>
+                    <p>Multilingual: English, Cantonese, Mandarin</p>
+                    <p>Attention to detail</p>
+                    <p>Time management</p>
+                    <p>Adaptability to fast-paced settings</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Creative & Other</h3>
+                    <p>Human-centered design principles</p>
+                    <p>Dynamic problem-solving</p>
+                    <p>Interest in 3D animation and stereo-related terminology</p>
+                    <p>Commitment to mastering studio-specific workflows</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <h3>Post-graduate Certificate, Web Development - Front-End Design</h3>
+                <p class="education-institution">George Brown College, Toronto, ON (Expected 2026)</p>
+                <p>Focus on human-centered design, dynamic problem-solving, and technical workflows.</p>
+            </div>
+            <div class="education-item">
+                <h3>Bachelor of Social Science (Public and International Studies)</h3>
+                <p class="education-institution">City University of Hong Kong (2018 - 2024)</p>
+                <p>Graduated with Second-Upper Honours, GPA: 3.92 (Year 3, Semester 2).</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-intro">I'm currently seeking new opportunities and would love to hear from you. Whether you have a question or just want to say hi, feel free to reach out!</p>
+            <div class="contact-details">
+                <p><strong>Email:</strong> <a href="mailto:LouisWongHK@protonmail.com">LouisWongHK@protonmail.com</a> / <a href="mailto:ChakMing.Wong@georgebrown.ca">ChakMing.Wong@georgebrown.ca</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+14168714478">(416) 871-4478</a> (WhatsApp Available)</p>
+                <p><strong>Location:</strong> Toronto, ON</p>
+                <p><strong>Availability:</strong> Full-time (9:00 AM - 6:00 PM EST) on Tuesday, Thursday, Friday, and weekends. High-speed internet for remote work.</p>
+
+            </div>
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button class="btn" type="submit">Send Message</button>
+            </form>
+            <div class="socials">
+                <h3>Connect with Me</h3>
+                <a href="#" title="GitHub" target="_blank"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a>
+                <a href="#" title="LinkedIn" target="_blank"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                </div>
+        </section>
+    </main>
+
+    <button id="backToTop" title="Go to top">↑</button>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Louis Wong | All Rights Reserved</p>
+        <p>Passionate about creative content production and eager to contribute to Company3’s editorial team in Toronto.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
