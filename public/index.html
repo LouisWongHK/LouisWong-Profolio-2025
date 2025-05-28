@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Louis Wong - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -77,8 +78,10 @@
 
         <section id="experience">
             <h2 class="section-title">Past Work Experience</h2>
+            
             <div class="experience-grid">
                 <div class="experience-card">
+                    <div data-aos="flip-left">
                     <h3>Operations & Marketing Officer</h3>
                     <p class="experience-company">Modern Bachelor, Hong Kong</p>
                     <p class="experience-date">Sep 2024 - Feb 2024</p> <ul>
@@ -87,7 +90,9 @@
                         <li>Delivered professional presentations to clients, enhancing communication clarity.</li>
                     </ul>
                 </div>
+                </div>
                 <div class="experience-card">
+                     <div data-aos="flip-left">
                     <h3>Part-time teaching Tutor (History)</h3>
                     <p class="experience-company">Tsuen Wan Public Ho Chuen Yiu Memorial College, Hong Kong</p>
                     <p class="experience-date">Sep 2023 - Jul 2024</p>
@@ -96,9 +101,11 @@
                         <li>Ensured a safe and organized classroom environment through active monitoring.</li>
                         <li>Adapted content delivery to meet varying needs, demonstrating flexibility.</li>
                     </ul>
+                    </div>
                 </div>
                 <div class="experience-card">
-                    <h3>Founder, Gunslinger Conflict Research Platform</h3>
+                    <div data-aos="flip-left">
+                    <h3>Founder, FlowerAndBaynoet Conflict Research Platform</h3>
                     <p class="experience-company">Hong Kong</p>
                     <p class="experience-date">2022 - Present</p>
                     <ul>
@@ -225,6 +232,10 @@
         <p>Passionate about creative content production and eager to contribute to Company3’s editorial team in Toronto.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+  AOS.init();
+</script>
 </body>
 </html>
