@@ -145,17 +145,19 @@ section:last-of-type {
     font-size: 2.5rem; /* Larger section titles */
     color: var(--accent-primary);
     margin-bottom: 2rem; /* Increased margin */
-    text-align: center;
+    text-align: left;
     position: relative;
     padding-bottom: 0.5rem;
     font-weight: 700;
+    padding: 10px;
 }
 
 .section-title::after {
     content: '';
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    /* align-items: left;
+    transform: translateX(-50%); */
+    left:2%;
     bottom: 0;
     width: 80px;
     height: 3px;
@@ -742,6 +744,8 @@ footer p {
     }
     .section-title {
         font-size: 2rem;
+        padding: 10px;
+
     }
     .about-content {
         flex-direction: column-reverse; /* Image on top on mobile */
